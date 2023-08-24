@@ -5,7 +5,7 @@ data "archive_file" "lambda_code" {
   }
 
 resource "aws_lambda_function" "aws_lambda_resource" {
-    file_name = data.archive_file.lambda_code.output_path
+    filename = data.archive_file.lambda_code.output_path
     function_name = "deploy-aws-lambda-image"
     role = aws_iam_role.lambda_role.arn
     runtime = "python3.8"

@@ -1,11 +1,13 @@
 name: Deploy AWS Lambda
 
 on:
-  # the 1st condition
-  workflow_run:
-    workflows: ["Create AWS Lambda"]
-    types:
-      - completed
+  workflow_dispatch:
+  # # the 1st condition
+  # workflow_run:
+  #   workflows: ["Create AWS Lambda"]
+  #   types:
+  #     - completed
+
 
 jobs:
   deploy:
@@ -14,3 +16,4 @@ jobs:
       - name: Deploy Lambda
         run: |
           echo "Deploying Lambda..."
+

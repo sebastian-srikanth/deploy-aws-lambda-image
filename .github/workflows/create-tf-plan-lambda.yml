@@ -6,7 +6,7 @@ on:
     workflows: ["Create AWS Lambda"]
     types:
       - completed
-  workflow_dispatch:
+  manual:
 
 jobs:
   deploy:

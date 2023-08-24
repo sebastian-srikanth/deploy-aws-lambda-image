@@ -1,11 +1,11 @@
 name: Create AWS Lambda
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   pull_request:
-    types: [closed]
+    # types: [review_requested]
     branches:
       - main
 
@@ -28,7 +28,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Terraform Inititalize
+      - name: Terraform Initialize
         run: |
           cd terraform
           terraform init -var-file=/dev.tfvars

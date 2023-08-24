@@ -1,0 +1,22 @@
+name: Deploy AWS Lambda
+
+on:
+  workflow_dispatch:
+    inputs:
+      workflow_id:
+        description: The ID of the workflow to wait for
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for workflow
+        uses: actions/wait-for-completion@v2
+        with:
+          workflow_id: ${{ inputs.workflow_id }}
+          wait-for-completion: true
+
+      - name: Deploy Lambda
+        run: |
+          echo "Deploying Lambda..."

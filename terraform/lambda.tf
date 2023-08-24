@@ -1,6 +1,6 @@
 data "archive_file" "lambda_code" {
     type = "zip"
-    source_dir = "./*.py"
+    source_dir = "./lambda-code"
     output_path = "./lambda_code.zip"
   }
 

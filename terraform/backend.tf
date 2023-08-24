@@ -1,12 +1,12 @@
 provider "aws" {
-    region = "var.aws_region"
+    region = "ap-south-1"
 }
 
 terraform {
     required_version = ">= 1.0.9"
     backend "s3" {
-        bucket = "var.backend_bucket_name"
-        key = "var.backend_bucket_key_name"
-        region = "var.aws_region"
+        bucket = "deploy-aws-lambda-image-tf-state"
+        key = "deploy_lambda.tfstate"
+        region = "ap-south-1"
     }
 }

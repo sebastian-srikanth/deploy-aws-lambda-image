@@ -5,10 +5,12 @@ data "archive_file" "lambda_code" {
   }
 
 resource "aws_lambda_function" "aws_lambda_resource" {
-    name = "deploy-aws-lambda-image"
+    file_name = data.archive_file.lambda_code.output_path
+    function_name = "deploy-aws-lambda-image"
+    role = aws_iam_role.lambda_role.arn
     runtime = "python3.8"
-    handler = "index.handler"
-    code = data.archive_file.lambda_code.output_path
+    handler = "lamda_function.handler"
+    source_code_hash = filebase64sha256(data.archive_file.lambda_code.output_path)
   }
 
 resource "aws_iam_role" "lambda_role" {

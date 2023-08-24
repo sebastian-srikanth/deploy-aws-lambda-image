@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "Deploying Lambda..."
 
-      - name: Terraform Inititalize
+      - name: Terraform Apply
         run: |
           cd terraform
           terraform init -var-file=/dev.tfvars

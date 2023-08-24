@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 terraform {
-    required_version = ">= 1.0.9"
+    required_version = ">= 1.5.6"
     backend "s3" {
         bucket = "deploy-aws-lambda-image-tf-state"
         key = "deploy_lambda.tfstate"

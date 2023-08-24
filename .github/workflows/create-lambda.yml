@@ -32,3 +32,9 @@ jobs:
           cd terraform
           terraform init -var-file=/dev.tfvars
           terraform plan -var-file=./dev.tfvars
+      
+      - name: Save state
+        run: echo "{name}={value}" >> $GITHUB_STATE
+
+      - name: Set output
+        run: echo "{name}={value}" >> $GITHUB_OUTPUT

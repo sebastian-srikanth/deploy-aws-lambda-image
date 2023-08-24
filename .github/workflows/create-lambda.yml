@@ -1,9 +1,7 @@
 name: Create AWS Lambda
 
 on:
-  pull_request:
-    types:
-      - merge
+  push:
     branches:
       - main
 
@@ -14,3 +12,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v2
       - run: terraform init
+

@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "backend_bucket_name" {
     type = string
-    value = "deploy-aws-lambda-image-tf-state"
+    default = "deploy-aws-lambda-image-tf-state"
 }
 
 variable "backend_bucket_key_name" {
